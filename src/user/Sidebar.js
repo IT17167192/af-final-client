@@ -1,7 +1,10 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
+import {isAuthenticate} from "../api_connection/ApiConnection";
 
 const Sidebar = (props) => {
+
+    const {user} = isAuthenticate();
 
     return (
         <nav className={props.toggler}>
@@ -12,18 +15,18 @@ const Sidebar = (props) => {
                 </a>
                 <hr className="sidebar-divider my-0" />
                     <ul className="nav navbar-nav text-light" id="accordionSidebar">
-                        <li className="nav-item" role="presentation">
-                            <Link className={props.active==="dashboard" ? 'nav-link active': 'nav-link'}
+                        {user.role === "1" && <li className="nav-item" role="presentation">
+                            <Link className={props.active === "adminDashboard" ? 'nav-link active' : 'nav-link'}
                                   to="/admin">
                                 <i className="fas fa-tachometer-alt"></i>
                                 <span>Dashboard</span>
                             </Link>
-                        </li>
+                        </li>}
                         <li className="nav-item" role="presentation">
-                            <Link className={props.active==="rawPage" ? 'nav-link active': 'nav-link'}
-                                  to="/rawPage">
-                                <i className="fas fa-pager"></i>
-                                <span>Raw Page</span>
+                            <Link className={props.active==="addAppointment" ? 'nav-link active': 'nav-link'}
+                                  to="/addAppointment">
+                                <i className="far fa-calendar-check"></i>
+                                <span>Add Appointment</span>
                             </Link>
                         </li>
                     </ul>

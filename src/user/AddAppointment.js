@@ -4,10 +4,9 @@ import './assets/fonts/fontawesome-all.min.css';
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import Footer from "./Footer";
-import Content from "./Content";
+import AddAppointmentContent from "./AddAppointmentContent";
 
-const Dashboard = () => {
-
+const AddAppointment = () => {
     const [toggler, setToggler] = useState('navbar navbar-dark align-items-start' +
         ' sidebar sidebar-dark accordion bg-gradient-primary p-0');
 
@@ -30,11 +29,11 @@ const Dashboard = () => {
     return (
         <div id="page-top">
             <div id="wrapper">
-                <Sidebar active="dashboard" toggler={toggler} toggleClass={toggleClass} />
+                <Sidebar active="addAppointment" toggler={toggler} toggleClass={toggleClass}/>
                 <div className="d-flex flex-column" id="content-wrapper">
                     <div id="content">
                         <Header collapseClass={collapseClass}/>
-                        <Content/>
+                        <AddAppointmentContent/>
                     </div>
                     <Footer />
                 </div>
@@ -46,4 +45,4 @@ const Dashboard = () => {
     );
 };
 
-export default Dashboard;
+export default AddAppointment;

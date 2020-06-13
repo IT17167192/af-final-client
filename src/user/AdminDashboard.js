@@ -4,9 +4,10 @@ import './assets/fonts/fontawesome-all.min.css';
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import Footer from "./Footer";
-import RawPageContent from "./RawPageContent";
+import Content from "./Content";
 
-const RawPage = () => {
+const AdminDashboard = () => {
+
     const [toggler, setToggler] = useState('navbar navbar-dark align-items-start' +
         ' sidebar sidebar-dark accordion bg-gradient-primary p-0');
 
@@ -29,11 +30,11 @@ const RawPage = () => {
     return (
         <div id="page-top">
             <div id="wrapper">
-                <Sidebar active="rawPage" toggler={toggler} toggleClass={toggleClass}/>
+                <Sidebar active="adminDashboard" toggler={toggler} toggleClass={toggleClass} />
                 <div className="d-flex flex-column" id="content-wrapper">
                     <div id="content">
                         <Header collapseClass={collapseClass}/>
-                        <RawPageContent/>
+                        <Content/>
                     </div>
                     <Footer />
                 </div>
@@ -45,4 +46,4 @@ const RawPage = () => {
     );
 };
 
-export default RawPage;
+export default AdminDashboard;

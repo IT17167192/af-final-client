@@ -1,18 +1,20 @@
 import React from "react";
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import AdminDashboard from "./user/AdminDashboard";
 import SignIn from "./user/SignIn";
-import Dashboard from "./admin/Dashboard";
-import RawPage from "./admin/RawPage";
-import Home from "./home/Home";
+import AddAppointment from "./user/AddAppointment";
+import AdminRoute from "./auth/AdminRoute";
+import UserRoute from "./auth/UserRoute";
+import SignUp from "./user/SignUp";
 
 const Routes = () => {
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/admin" component={Dashboard} />
-                <Route exact path="/rawPage" component={RawPage} />
-                <Route exact path="/signIn" component={SignIn} />
+                <Route exact path="/" component={SignIn} />
+                <Route exact path="/signup" component={SignUp} />
+                <AdminRoute exact path="/admin" component={AdminDashboard} />
+                <UserRoute exact path="/addAppointment" component={AddAppointment} />
             </Switch>
         </BrowserRouter>
     )
